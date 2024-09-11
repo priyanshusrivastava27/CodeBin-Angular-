@@ -1,0 +1,19 @@
+<!--Reactive Form-->
+<form class="container" [formGroup] = 'loginForm'>
+
+   <h4>Please Login</h4> 
+           <!--Email input-->
+   <input type="email" placeholder="email here" [formControl]="email" />
+   <h5 class="red-text" [hidden]="email.valid || email.untouched"> Enter Correct email</h5>
+
+
+     <!--Password Input-->
+   <input type="password" placeholder="Enter password" [formControl]="password "/>
+   <h5 class="red-text" [hidden]="password.valid || password.untouched"> password is short</h5>
+
+
+
+   <button class="btn-green"[disabled]="loginForm.invalid" (click)="login()">Login</button>
+   <button class="btn-green" (click)="reset()">Reset</button>
+
+</form>

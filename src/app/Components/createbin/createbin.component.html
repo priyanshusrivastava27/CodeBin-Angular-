@@ -1,0 +1,21 @@
+<!--Reactive Form-->
+<form class="container" [formGroup] = 'BinForm'>
+
+    <h4>Create Code Snippet</h4> 
+    <br/>
+            <!--Email input-->
+    <input type="text" placeholder="Title" [formControl]="title" />
+    <h5 class="red-text" [hidden]="title.valid || title.untouched"> Code required</h5>
+ 
+ 
+      <!--Password Input-->
+      <br/>
+    <textarea type="Code" placeholder="Enter Code" [formControl]="Code "></textarea>
+    <h5 class="red-text" [hidden]="Code.valid || Code.untouched"> Code required</h5>
+ 
+ <br/>
+ 
+    <button class="btn-green"[disabled]="BinForm.invalid" (click)="save()">save</button>
+    <!--<button class="btn-green" (click)="reset()">Reset</button>-->
+ 
+ </form>
